@@ -6,6 +6,7 @@ from OpenGL.GLU import *
 from Transformations import *
 from Models.Cube import *
 from Models.Hall import *
+from Models.Test import *
 
 def object(edges, verts):
   glBegin(GL_LINES)
@@ -20,26 +21,32 @@ def main():
     pygame.display.set_mode(display, DOUBLEBUF | OPENGL | RESIZABLE)
 
     gluPerspective(40, display[0] / display[1], 1, 10)
-    translate(0, 0, -5)
-    #rotate(45, 0, 1, 0)
-    #scale(.5)
+    translate(0, 0, -8)
+    #rotate(58, 1, 0, 0)  #58 fica pro meu lado, 61 fica legal tambem
+    scale(0.03)
     i = 0
-    #glOrtho(1, -1, 1, -1, 100, 0.1)
     #orthogonalProjection(1, -1, 1, -1, 100, 0.1)
-    #glFrustum(1, 10, 1, 10, 1, 10)
-    perspective(1, 10, 1, 10, 1, 10)
+    #perspective(1, 10, 1, 10, 1, 10)
+
     while(1):
         for ev in pygame.event.get():
             if ev.type == pygame.QUIT:
                 pygame.quit()
                 quit()
-        #rotate(1,0,0,1, verts)
+
+        #rotate(1,1,0,0)
         #translate(0,0,1)
         #i+=0.25
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
-        object(cube_faces, cube_verts)
-        #object(hall_edges, hall_verts)
+        #object(cube_faces, cube_verts)
+        #object(hall_faces, hall_verts)
+        object(test_faces, test_verts)
+
         pygame.display.flip()
         pygame.time.wait(500)
 
 main()
+
+'Funções do OpenGL'
+  #glFrustum(1, 10, 1, 10, 1, 10)
+  #glFrustum(1, 10, 1, 10, 1, 10)
