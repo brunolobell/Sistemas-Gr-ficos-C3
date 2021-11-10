@@ -5,11 +5,6 @@ from OpenGL.GLU import *
 
 from objLoader import *
 from Transformations import *
-from Models.Cube import *
-from Models.Hall import *
-from Models.Test import *
-from Models.Cone import *
-from Models.Cube2 import *
 
 def main():
     # Iniciação do pygame
@@ -21,7 +16,7 @@ def main():
     # RESIZABLE -> 
     pygame.display.set_mode(display, DOUBLEBUF | OPENGL | RESIZABLE)
 
-    gluPerspective(90, display[0] / display[1], 1, 100) 
+    gluPerspective(120, display[0] / display[1], 1, 100) 
     glLightfv(GL_LIGHT0, GL_POSITION,  (-40, 200, 100, 0.0))
     glLightfv(GL_LIGHT0, GL_AMBIENT, (0.2, 0.2, 0.2, 1.0))
     glLightfv(GL_LIGHT0, GL_DIFFUSE, (0.5, 0.5, 0.5, 1.0))
@@ -30,13 +25,22 @@ def main():
     glEnable(GL_LIGHTING)
     glEnable(GL_DEPTH_TEST)
     glEnable(GL_COLOR_MATERIAL)
-    glShadeModel(GL_SMOOTH)  
+    glShadeModel(GL_SMOOTH) 
 
-    obj = OBJ("teste.obj", swapyz=True)
+    # Objetos criação
+    obj1 = OBJ("Models/chao.obj")
+    obj2 = OBJ("Models/AtrasC3.obj")
+    obj3 = OBJ("Models/Cupula.obj")
+    obj4 = OBJ("Models/FrenteC3.obj")
+    # obj = OBJ("Models/Cubo2.obj")
+
+    # Definições iniciais para apresentar o projeto
     translate(0, 0, -5)
     scale(0.1)
     s = 0.1
+
     while(1):
+      # Eventos do pygame
       for ev in pygame.event.get():
         if ev.type == pygame.QUIT:
           pygame.quit()
@@ -68,11 +72,30 @@ def main():
         elif ev.type == pygame.constants.KEYDOWN and ev.key == pygame.constants.K_o:
           orthogonalProjection(1, 2, 5, 4, 5, 10)
         elif ev.type == pygame.constants.KEYDOWN and ev.key == pygame.constants.K_p:
-          perspective(1, 2, 4, 5, 0.1, 100)
-
+          perspective(10,20,25,30,40,35)
+      
+      # Limpar a tela
       glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
-      glCallList(obj.gl_list)
-      pygame.display.flip()
-      #pygame.time.wait(200)
+  
+      # Apresenta na tela uma lista
+      # glCallList(obj1.gl_list)
+      # glCallList(obj2.gl_list)
+      # glCallList(obj3.gl_list)
+      # glCallList(obj4.gl_list)
 
+      # DDD Algoritmo
+      # C
+      DDA(1, 5, 5, 5)
+      DDA(1, 5, -1, 3)
+      DDA(1, 1, -1, 3)
+      DDA(1, 1, 5, 1)
+      # 3
+      DDA(8, 5, 12, 5)
+      DDA(12, 5, 14, 3)
+      DDA(14, 3, 10, 3)
+      DDA(14, 3, 10, 3)
+      DDA(14, 3, 8, 0)
+
+      pygame.display.flip()
+    
 main()

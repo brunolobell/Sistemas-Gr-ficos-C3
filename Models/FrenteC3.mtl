@@ -1,0 +1,68 @@
+# Blender MTL File: 'untitled.blend'
+# Material Count: 6
+
+newmtl Materiais
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Models/Textures/textura_branca.jpg
+
+newmtl Materiais.002
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Models/Textures/C3-lado1.png
+
+newmtl Materiais.005
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.763555 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Models/Textures/textura_branca.jpg
+
+newmtl Materiais.006
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.688114 0.764576 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Models/Textures/textura_branca.jpg
+
+newmtl Materiais.007
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.699464 0.800000 0.723861
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Models/Textures/textura_branca.jpg
+
+newmtl test
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Models/Textures/C3-lado2.png
