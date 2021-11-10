@@ -43,3 +43,24 @@ def perspective(left, right, bottom, top, near, far):
     P[2][3] = -1; 
     P[3][2] = -2 * far * near / (far - near); 
     glMultMatrixf(P)
+
+def setPixel(x, y):
+    glBegin(GL_LINES)
+    glVertex2i(np.round(x), np.round(y))
+    glEnd()
+
+def bresenham(x1, y1, x2, y2):
+    x = x1
+    y = y1
+    dx = x2 - x1
+    dy = y2 - y1
+    m = dy / dx
+    e = m - (1/2)
+    for i in range(dx):
+        print((x,y))
+        setPixel(x,y)
+        while e > 0:
+            y += 1
+            e -= 1
+        x += 1
+        e += m 
